@@ -1,2 +1,2 @@
 # fair_policing
- DSC180B senior capstone project
+ How recreational marijuana legalization(RML) affects traffic-related scenes in San Diego, CA
