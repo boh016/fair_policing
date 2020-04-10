@@ -130,6 +130,15 @@ def clean_new_post(x):
         else:
             return 'Y'
 
+def clean_new_arrest(x):
+    arrest_lst = ['Custodial Arrest without warrant'.upper(),'Custodial Arrest pursuant to outstanding warrant'.upper()]
+    if not isinstance(x,str):
+        return np.NaN
+    elif x.upper() in arrest_lst:
+        return 'Y'
+    else:
+        return 'N'
+
 old_clean = {"service_area":clean_old_service,"subject_race":clean_old_race\
 ,"subject_age":clean_age,"subject_sex":clean_sex,"searched":clean_old_post,\
 "arrested":clean_old_post,"contraband_found":clean_old_post,"property_seized":clean_old_post}
