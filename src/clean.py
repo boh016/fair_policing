@@ -129,6 +129,16 @@ def clean_new_post(x):
             return 'N'
         else:
             return 'Y'
+
+old_clean = {"service_area":clean_old_service,"subject_race":clean_old_race\
+,"subject_age":clean_age,"subject_sex":clean_sex,"searched":clean_old_post,\
+"arrested":clean_old_post,"contraband_found":clean_old_post,"property_seized":clean_old_post}
+
+
+new_clean = {"subject_race":clean_new_race\
+,"subject_age":clean_age,"subject_sex":clean_sex,"searched":clean_new_post,\
+"arrested":clean_new_arrest,"contraband_found":clean_new_post,"property_seized":clean_new_post}
+
 ###############################################################################
 #-------------------------collision data--------------------------------------------
 # return subset of the collision data with only DUI related record
