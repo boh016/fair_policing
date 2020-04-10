@@ -15,19 +15,15 @@ rename_dict = {
     'basis_for_search':'searched',\
     'race':'subject_race',\
     'type_of_property_seized':'property_seized',\
-    'contraband':'contraband_found'}
-
-
-# return subset of the old stop data with only DUI related record
-def old_dui(old_stop):
-    copy = old_stop.copy(deep=True)
-    copy = copy[~copy.search_details_description.isna()]
-    copy.search_details_description = copy.search_details_description.str.upper()
-    return copy[copy.search_details_description.str.contains("DUI")]
+    'contraband':'contraband_found',\
+    # below is for filtering out DUI records
+    # I rename the old versions DUI col to the new versions's name
+    'search_details_description':'reason_for_stop_explanation'}
 
 # return subset of the new stop data with only DUI related record
-def new_dui(new_stop):
-    copy = new_stop.copy(deep=True)
+def filter_to_dui(stop):
+    copy = stop.copy(deep=True)
+    copy = copy[~copy.reason_for_stop_explanation.isna()]
     copy.reason_for_stop_explanation = copy.reason_for_stop_explanation.str.upper()
     return copy[copy.reason_for_stop_explanation.str.contains("DUI")]
 
