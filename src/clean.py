@@ -7,6 +7,17 @@ import pandas as pd
 # tring to identify DUI for stop data and collision data.
 DUI_lst = ['CONTRABAND VISIBLE', 'ODOR OF CONTRABAND', 'DUI']
 
+rename_dict = {
+    'perceived_age':'subject_age',\
+    'perceived_gender':'subject_sex',\
+    'result':'arrested',\
+    'reason_for_stop_detail':'stop_cause',\
+    'basis_for_search':'searched',\
+    'race':'subject_race',\
+    'type_of_property_seized':'property_seized',\
+    'contraband':'contraband_found'}
+
+
 # return subset of the old stop data with only DUI related record
 def old_dui(old_stop):
     copy = old_stop.copy(deep=True)
