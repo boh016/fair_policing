@@ -16,7 +16,7 @@ new_contraband_url = "http://seshat.datasd.org/pd/ripa_contraband_evid_datasd.cs
 #---------------------these functions are for fetching stop data---------------
 # fetch from the older version
 def fetch_old(year): # for 2014-2017
-    if year <= 2017:
+    if year <= 2017 and year >= 2014:
         full_old = old_url+str(year)+old_tail
         stop_df = pd.read_csv(full_old)
         search_old = old_url+"search_details_"+str(year)+"_datasd.csv"
