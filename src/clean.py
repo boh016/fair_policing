@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-
+from datetime import datetime
 
 ###############################################################################
 #-------------------------stop data--------------------------------------------
@@ -148,4 +148,24 @@ new_clean = {"subject_race":clean_new_race\
 #-------------------------collision data--------------------------------------------
 # return subset of the collision data with only DUI related record
 def collision_dui(collision_df):
-    return collision_df[collision_df.charge_desc.str.contains("DUI")]
+    copy = stop.copy(deep=True)
+    copy = copy[copy['PCF_VIOL_CATEGORY'] == '01']
+    return copy
+
+def clean_longitude(x):
+    if x:
+        return (-1)*float(x)
+    else:
+        return x
+
+def clean_PCF(x):
+    if x == '01':
+        return 'DUI'
+    else:
+        return x
+
+def clean_date(x):
+    return datetime.strptime(str(x), '%Y%m%d')
+
+collision_clean = {'PCF_VIOL_CATEGORY': clean_PCF, 'LONGITUDE': clean_longitude,\
+'COLLISION_DATE': clean_date}
