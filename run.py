@@ -8,19 +8,15 @@ import pandas as pd
 sys.path.insert(0, 'src')
 import fetch
 import clean
+import eda
 
 STOP_PARAMS = 'config/stop-params.json'
-#not yet implemented
-COLLISION_PARAMS = 'config/collision-params.json'
 
 STOP_PROC_PARAMS = 'config/stop-process-params.json'
-# not yet implemented
-COLLISION_PROC_PARAMS = 'config/collision-process-params.json'
-
 
 TEST_STOP_PARAMS = 'config/test-stop-params.json'
-# not yet implemented
-TEST_COLLISION_PARAMS = 'config/test-collision-params.json'
+
+TEST_COLLISION_PARAMS = 'config/collision-params.json'
 
 
 def load_params(fp):
@@ -39,8 +35,6 @@ def get_stop(years,out):
             data.to_csv(out+"raw_stop_"+str(y)+".csv")
     return
 
-def get_collision():
-    return
 
 # find raw data in temp, clean it and write to out
 def process_stop(cols,out):
@@ -52,7 +46,7 @@ def process_stop(cols,out):
             year = ''
             for i in f:
                 if i.isdigit():
-                year += i
+                    year += i
             year = int(year)
             if year < 2018:
                 for c in clean.old_clean.keys():
@@ -64,10 +58,14 @@ def process_stop(cols,out):
                 data.to_csv(out+"proc_stop_"+str(year)+".csv")
     return
 
-def process_collision():
+# will save fig in ./data/test folder
+def test_eda(fp,out):
+    ca = pd.read_csv(fp+"/test_CA.csv")
+    ca = eda.clean_CA(ca)
+    sd = pd.read_csv(fp+"/test_SD.csv")
+    eda.plot_annual_trend(ca[ca.PCF_VIOL_CATEGORY == "01"].groupby("ACCIDENT_YEAR").sum(),sd.groupby("YEAR").DUI.sum(),out)
+    eda.plot_monthly_trend(ca,sd,out)
     return
-
-
 
 def main(targets):
 
@@ -91,24 +89,19 @@ def main(targets):
         cfg = load_params(STOP_PARAMS)
         get_stop(**cfg)
 
-# not yet implemented
-    if 'collision_data' in targets:
-        cfg = load_params(COLLISION_PARAMS)
-        get_collision(**cfg)
-
     if 'process_stop' in targets:
         cfg = load_params(STOP_PROC_PARAMS)
         process_stop(**cfg)
 
-# not yet implemented
-    if 'process_collision' in targets:
-        cfg = load_params(COLLISION_PROC_PARAMS)
-        process_collision(**cfg)
-
-
     if 'stop-test' in targets:
         cfg = load_params(TEST_STOP_PARAMS)
         get_stop(**cfg)
+
+    # for checkpoint 2: this will read the test files and produce the plots
+    if 'test' in targets:
+        cfg = load_params(TEST_COLLISION_PARAMS)
+        test_eda(**cfg)
+
 
 #    if 'test-project' in targets:
 #        if os.path.isdir("./data"):
