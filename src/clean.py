@@ -184,7 +184,7 @@ def type_collision(x):
           'G':'Vehicle/Pedstrian','H':'Other','-':'Not Stated'}
     return dic[x]
 
-def type_injury(x)
+def type_injury(x):
     dic = {0:'property damage only',1:'fatal',2:'severe injury',3:'other visible injury',\
           4:'complaint of pain'}
     return dic[x]
