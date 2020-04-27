@@ -169,14 +169,10 @@ def clean_date(x):
 
 def get_hour(x):
     #collision time is non zero padded
-    return str(int(x)).zfill(4)[0:2]
+    x = str(int(x)).zfill(4)[0:2]+':00'
+    x = datetime.strptime(x,'%H:%M')
+    return x
 
-def format_hour(x):
-    dic = {'00':'12AM','01':'1AM','02':'2AM','03':'3AM','04':'4AM',\
-    '05':'5AM','06':'6AM','07':'7AM','08':'8AM','09':'9AM','10':'10AM',\
-    '11':'11AM','12':'12PM','13':'1PM','14':'2PM','15':'3PM','16':'4PM',\
-    '17':'5PM','18':'6PM','19':'7PM','20':'8PM','21':'9PM','22':'10PM','23':'11PM'}
-    return dic[x]
 
 def type_collision(x):
     dic = {'A': 'Head-On','B':'Sideswipe','C': 'Rear End',\
