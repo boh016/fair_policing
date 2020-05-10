@@ -22,7 +22,7 @@ iframe embedding
 
 
 
-
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Highcharts - Heat Map Chart</title>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -269,5 +269,6 @@ iframe embedding
     </script>
 </head>
 <body>
-    <div id="container" style="height: 800px; min-width: 310px; max-width: 800px; margin: 0 auto"></div>
+    <div id="container" style="height: 700px; min-width: 310px; max-width: 800px; margin: 0 auto"></div>
 </body>
+</html>
