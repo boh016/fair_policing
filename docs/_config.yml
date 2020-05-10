@@ -1,4 +1,5 @@
 theme: jekyll-theme-cayman
+exclude: [".rvmrc", ".rbenv-version", "Rakefile"]
 # Themes are encouraged to use these universal variables
 # so be sure to set them if your theme uses them.
 #
