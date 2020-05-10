@@ -1,1 +1,10 @@
 theme: jekyll-theme-cayman
+# Themes are encouraged to use these universal variables
+# so be sure to set them if your theme uses them.
+#
+title : RML
+author : Bo Hu
+  name : Bo Hu, Jialin Shan, Yingwen Zhang
+  email :
+  github : boh016
+  twitter :
