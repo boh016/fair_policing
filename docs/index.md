@@ -18,7 +18,6 @@ iframe embedding
 
 <iframe class="highcharts-iframe" src="https://app.everviz.com/embed/cUNgFv-c/" title="Chart: " style="border: 0; width: 100%; height: 500px"></iframe>
 
-<!DOCTYPE html>
 
 
 
@@ -52,11 +51,11 @@ iframe embedding
             }
             var chartxaxis = {
                 categories: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday','Saturday','Sunday'],
-                title:'Day of Week'
+                title:{ text:'Day of Weeek' }
             }
             var chartyaxis = {
                 categories: ['23','22','21','20','19','18','17','16','15','14','13','12','11','10','9','8','7','6','5','4','3','2','1','0'],
-                title: 'Hour'
+                title: { text:'Hour' }
             }
             var chartcoloraxis = {
                 min: 0,
@@ -69,7 +68,7 @@ iframe embedding
                 margin: 0,
                 verticalAlign: 'top',
                 y: 25,
-                symbolHeight: 280
+                symbolHeight: 350
             }
             var chartooltip = {
                 formatter: function () {
@@ -80,7 +79,7 @@ iframe embedding
                 }
             }
             var chartseries = [{
-                name: 'Sales per employee',
+                name: 'count',
                 borderWidth: 1,
                 data: [[0, 0, 138],
  [0, 1, 172],
@@ -251,7 +250,7 @@ iframe embedding
  [6, 22, 188],
  [6, 23, 209]],
                 dataLabels: {
-                    enabled: true,
+                    enabled: false,
                     color: '#000000'
                 }
             }]
@@ -269,6 +268,6 @@ iframe embedding
     </script>
 </head>
 <body>
-    <div id="container" style="height: 700px; min-width: 310px; max-width: 800px; margin: 0 auto"></div>
+    <div id="container" style="height: 477px; min-width: 310px; max-width: 800px; margin: 0 auto"></div>
 </body>
 </html>
