@@ -1,7 +1,3 @@
 theme: jekyll-theme-cayman
-# Themes are encouraged to use these universal variables
-# so be sure to set them if your theme uses them.
-#
-title : RML
-author : Bo Hu
-github : boh016
+title: RML vs. Traffic Collisions
+#description: 
