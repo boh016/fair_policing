@@ -5,7 +5,8 @@ title: DUI vs DateTime
 ### DUI Count by Year
 For California, a big increase in around 2016 can be observed and the counts decrease since 2016. However, for South Dakota, a big decrease in 2016 can be observed and the counts increase since 2016. The reason behind the decrease/increase will be analyzed and whether the change in California was caused by RML or not will be observed.
 
-[pic]
+<img src="../assets/datetime_page/CA_year.png" width=49%)/>
+<img src="../assets/datetime_page/SD_year.png" width=49%)/>
 
 ### DUI Rate by Year
 The below graph illustrates the DUI rate of all collisions in each state by year. DUI rate is calculated by the number of collisions caused by DUI over the total number of traffic collisions.
@@ -25,3 +26,5 @@ On a more granular level, the day of the week and time of collision do contribut
 
 [pic]
 [pic]
+
+[back](../index.html)
