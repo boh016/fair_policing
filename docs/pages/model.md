@@ -4,14 +4,14 @@ title: Difference in Differences(DD) Model
 ---
 ## Motivation
 The Difference in Differences(DD) model could be one of the most popular techniques to evaluate the effectiveness of certain policies in social sciences and econometrics. It tries to apply experimental design on existing panel data(time spanned data) by assessing the differential effect between the targeted treatment group, for which the studied policy takes place and a comparable control group, for which the policy is not implemented. The advantage of this model is that it would establish causal relationship between the explanatory variable and the response variable. In this case, whether legalizing recreational marijuana would lead to an increase in DUI rate in California or not. By adopting this technique, we would, to a certain degree, mitigate or avoid some selection bias and confounding factors that would bring misconceptions on the true impact that solely based on the policy towards the treatment group. The model uses the equation below to find out the differential effect:
+y<sub>it</sub> = α + β*treatment + γ*post + δ*(treatment * post)
 
+where
+y<sub>it</sub>= the response variable,
 
-    y<sub>it</sub> = α + β*treatment + γ*post + δ*(treatment * post)
+treatment = indicator of whether the policy takes place or not,
 
-      y<sub>it</sub>= the response variable
-			treatment = indicator of whether the policy takes place or not
-			post = time indicator that is 1 if time is after the policy if effective
-            or 0 if time is before the policy is effective
+post = time indicator that is 1 if time is after the policy if effective or 0 if time is before the policy is effective.
 
 Our benchmark model uses these definitions to investigate our problem and δ, the coefficient of  the interaction variable between treatment and time is the key to tell whether the policy brings statistical significance to the treatment group.
 
@@ -47,3 +47,5 @@ After demeaning the data, we find South Dakota’s data is less volatile compare
 <img src="../assets/model_page/model5.jpg" width="50%" horizontal-align="middle"/>
 
 ## Result
+
+[back](../index.html)
