@@ -7,6 +7,7 @@ description: How recreational marijuana legalization(RML) affects traffic-relate
 [main page](https://boh016.github.io/fair_policing/)
 
 [DUI vs. DateTime](./pages/datetime.html)
+
 [Model](./pages/model.html)
 
 
