@@ -3,7 +3,7 @@ layout: default
 title: RML vs Traffic Collisions
 ---
 here is background
-[main page](https://boh016.github.io/fair_policing/docs/_site/index.html)
+[main page](https://boh016.github.io/fair_policing/)
 
 [DUI vs. DateTime](./pages/datetime.html)
 
