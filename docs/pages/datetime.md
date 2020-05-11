@@ -31,3 +31,7 @@ test reference html
 
 <iframe src="../assets/datetime_page/sd_heat1.html" style="border:0px #ffffff none;" name="myiFrame" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="700px" width="49%" allowfullscreen></iframe>
 [back](../index.html)
+
+### DUI Count by Month and Day
+<iframe src="../assets/datetime_page/ca_heat2.html" style="border:0px #ffffff none;" name="myiFrame" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="700px" width="49%" allowfullscreen></iframe>
+
