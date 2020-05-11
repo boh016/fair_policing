@@ -1,11 +1,14 @@
 ---
 layout: default
 title: RML vs Traffic Collisions
+description: How recreational marijuana legalization(RML) affects traffic-related scenes in California using Difference in Differences model
 ---
-here is background
+
 [main page](https://boh016.github.io/fair_policing/)
 
 [DUI vs. DateTime](./pages/datetime.html)
+[Model](./pages/model.html)
+
 
 ## RML
 in 2016 California has legalized recreational use of marijuana.
