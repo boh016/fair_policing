@@ -14,7 +14,8 @@
                 plotBorderWidth: 1
             }
             var chartitle = {
-                text: 'CA DUI Count by Year and Month'
+                text: 'CA DUI Count by Year and Month',
+                style:{fontSize: '16px',fontWeight:'bold'}
             }
             var chartlegend = {
                 layout: 'vertical',
@@ -35,7 +36,7 @@
                 title: { text:'Year' }
             }
             var chartcoloraxis = {
-                min: 0,
+                min: 298,
                 minColor: '#ffffff',
                 maxColor: '#0a452a'
             }
@@ -50,8 +51,9 @@
             var chartooltip = {
                 formatter: function () {
                     return '<b>' + '</b> There are <br><b>' +
-                        this.point.value + '</b> DUI collisions on <br><b>'                  +this.series.xAxis.categories[this.point.x]+
-                        '</b> at hour <br><b>'+
+                        this.point.value + '</b> DUI collisions in <b>'                  
+                        +this.series.xAxis.categories[this.point.x]+
+                        '</b>, <b>'+
                      this.series.yAxis.categories[this.point.y] + '</b>';
                 }
             }
@@ -125,6 +127,6 @@
     </script>
 </head>
 <body>
-    <div id="container" style="height: 500px; width:'49%'; margin: 0 auto"></div>
+    <div id="container" style="height: 300px; width:'49%'; margin: 0 auto"></div>
 </body>
 </html>
