@@ -2,7 +2,7 @@
   url: ./_site/index.html
 
 - title: DUI VS TIME
-  url: ./_site/pages/datetime.html
+  url: ./pages/datetime.html
 
 - title: About
   url: _data/author.yml
