@@ -28,6 +28,6 @@ On a more granular level, the day of the week and time of collision do contribut
 [pic]
 
 test reference html
-<link href="../assets/datetime_page/heatmap.html" rel="heatmap" />
+<iframe src="../assets/datetime_page/heatmap.html" style="border:0px #ffffff none;" name="myiFrame" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="400px" width="600px" allowfullscreen></iframe>
 
 [back](../index.html)
