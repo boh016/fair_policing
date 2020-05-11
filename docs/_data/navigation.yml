@@ -1,5 +1,5 @@
 - title: Home
-  url: 
+  url: ./_site/index.html
 
 - title: About
-  url: about
+  url: _data/author.yml

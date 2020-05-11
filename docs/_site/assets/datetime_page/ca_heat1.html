@@ -9,13 +9,12 @@
         $(function () {
             var chartype = {
                 type: 'heatmap',
-                marginTop: 50,
+                marginTop: 40,
                 marginBottom: 80,
                 plotBorderWidth: 1
             }
             var chartitle = {
-                text: 'CA DUI Count by Hour and Day of Week',
-                style:{fontSize: '16px',fontWeight:'bold'}
+                text: 'CA DUI Count by Hour and Day of Week'
             }
             var chartlegend = {
                 layout: 'vertical',
@@ -36,7 +35,7 @@
                 title: { text:'Hour' }
             }
             var chartcoloraxis = {
-                min: 58,
+                min: 0,
                 minColor: '#ffffff',
                 maxColor: '#0a452a'
             }
@@ -45,8 +44,8 @@
                 layout: 'vertical',
                 margin: 0,
                 verticalAlign: 'top',
-                y: 33,
-                symbolHeight: 370
+                y: 25,
+                symbolHeight: 350
             }
             var chartooltip = {
                 formatter: function () {
