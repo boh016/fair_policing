@@ -27,7 +27,7 @@ On a more granular level, the day of the week and time of collision do contribut
 [pic]
 
 test reference html
-<iframe src="../assets/datetime_page/ca_heat1.html" style="border:0px #ffffff none;" name="myiFrame" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="501px" width="49%" allowfullscreen></iframe>
+<iframe src="../assets/datetime_page/ca_heat1.html" style="border:0px #ffffff none;" name="myiFrame" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="600px" width="49%" allowfullscreen></iframe>
 
-<iframe src="../assets/datetime_page/sd_heat1.html" style="border:0px #ffffff none;" name="myiFrame" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="501px" width="49%" allowfullscreen></iframe>
+<iframe src="../assets/datetime_page/sd_heat1.html" style="border:0px #ffffff none;" name="myiFrame" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="600px" width="49%" allowfullscreen></iframe>
 [back](../index.html)
