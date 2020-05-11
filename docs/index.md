@@ -2,11 +2,12 @@
 layout: default
 title: RML vs Traffic Collisions
 ---
+here is background
 [main page](https://boh016.github.io/fair_policing/)
 
 [DUI vs. DateTime](./pages/datetime.html)
 
-# RML
+## RML
 in 2016 California has legalized recreational use of marijuana.
 
 picture
