@@ -24,10 +24,10 @@ South Dakota is not as populated as California, thus there are fewer cases when 
 ### DUI Count by Day of Week and Time
 On a more granular level, the day of the week and time of collision do contribute to the number of collisions, given that these are significant factors in terms of traffic volume, which are directly related to collisions. Each Friday tends to be the day with the most traffic collisions, while the hours around weekend midnight are the hours with the most DUI accidents, perhaps when people just finished partying and going home, they decide that they might get away with it.
 
-<iframe src="https://sites.google.com/ucsd.edu/caduicount1/home" style="border:0px #ffffff none;" name="myiFrame" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="400px" width="600px" allowfullscreen></iframe>
 [pic]
 
 test reference html
-<iframe src="../assets/datetime_page/heatmap.html" style="border:0px #ffffff none;" name="myiFrame" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="400px" width="600px" allowfullscreen></iframe>
+<iframe src="../assets/datetime_page/ca_heat1.html" style="border:0px #ffffff none;" name="myiFrame" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="400px" width="600px" allowfullscreen></iframe>
 
+<iframe src="../assets/datetime_page/sd_heat1.html" style="border:0px #ffffff none;" name="myiFrame" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="400px" width="600px" allowfullscreen></iframe>
 [back](../index.html)
