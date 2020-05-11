@@ -9,12 +9,13 @@
         $(function () {
             var chartype = {
                 type: 'heatmap',
-                marginTop: 40,
+                marginTop: 50,
                 marginBottom: 80,
                 plotBorderWidth: 1
             }
             var chartitle = {
-                text: 'SD DUI Count by Hour and Day of Week'
+                text: 'SD DUI Count by Hour and Day of Week',
+                style:{fontSize: '16px',fontWeight:'bold'}
             }
             var chartlegend = {
                 layout: 'vertical',
@@ -44,8 +45,8 @@
                 layout: 'vertical',
                 margin: 0,
                 verticalAlign: 'top',
-                y: 25,
-                symbolHeight: 350
+                y: 33,
+                symbolHeight: 370
             }
             var chartooltip = {
                 formatter: function () {
