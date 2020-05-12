@@ -399,7 +399,7 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
   .blog-header .blog-title {
-    margin-bottom: 8px;
+    margin-bottom: 15px;
     font-size: 50px;
     font-weight: 700;
     letter-spacing: -2px;
@@ -435,7 +435,7 @@ body {
       display: block;
       font-size: 30px;
       line-height: 1.15;
-      margin-bottom: 10px; }
+      margin-bottom: 15px; }
       .content article .post-title a {
         text-decoration: none;
         color: #333332; }
@@ -550,7 +550,7 @@ body {
     font-size: 24px;
     line-height: 1.3;
     margin-top: 50px;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
     font-family: "Helvetica Neue", "Open Sans", Arial, Helvetica, sans-serif; }
   .post .post-content h3 {
     font-size: 36px; }
@@ -561,7 +561,10 @@ body {
     font-size: 42px;
     line-height: 1.2;
     margin-top: 50px;
-    margin-bottom: 0px; }
+    margin-bottom: 10px; }
+  .post .post-content img{
+
+    margin-bottom: 30px; }
   .post .post-content table {
     border-collapse: collapse; }
   .post .post-content table, .post .post-content th, .post .post-content td {
@@ -575,7 +578,7 @@ body {
     line-height: 1.59;
     letter-spacing: -.002em;
     margin-top: 30px;
-    margin-bottom: 0;
+    margin-bottom: 20px;
     color: #333333;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
@@ -584,10 +587,12 @@ body {
     color: #333333;
     text-decoration: underline; }
   .post .post-content amp-img, .post .post-content amp-youtube {
-    margin-top: 30px; }
+    margin-top: 30px;
+    margin-bottom: 30px; }
   .post .post-content figure {
     margin: 0;
-    padding: 0 0 30px; }
+    padding: 0 0 30px;
+    margin-bottom: 30px; }
   .post .post-content figcaption {
     font-weight: 400;
     font-style: italic;
@@ -959,7 +964,11 @@ canvas {
   text-align: left; }
 
 .center {
-  text-align: center; }
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .right-align {
   text-align: right; }
@@ -2572,7 +2581,9 @@ body > figure > figcaption > header > h2 {
       <li class="ampstart-nav-item ampstart-nav-dropdown relative ">
           <li class="ampstart-faq-item"><a href="index.html" class="text-decoration-none">Home</a></li>
       </li>
-      
+      <li class="ampstart-nav-item ampstart-nav-dropdown relative ">
+          <li class="ampstart-faq-item"><a href="./pages/model.html" class="text-decoration-none">Model</a></li>
+      </li>
             
       <li class="ampstart-nav-item ampstart-nav-dropdown relative ">
           <li class="ampstart-faq-item"><a href="./pages/datetime.html" class="text-decoration-none">DUI VS TIME</a></li>
@@ -2604,18 +2615,48 @@ body > figure > figcaption > header > h2 {
 </amp-sidebar>
 
 
+      <figure class="ampstart-image-fullpage-hero m0 relative mb4">
+    <amp-img width="404" height="720" alt="Cover" layout="responsive" src="./assets/weed.png" media="(max-width: 415px)"></amp-img>
+    <amp-img height="720" alt="Cover" layout="fixed-height" src="./assets/weed.png" media="(min-width: 416px)"></amp-img>
+    <figcaption class="absolute top-0 right-0 bottom-0 left-0">
+      <header class="p1">
+        <h1 class="ampstart-fullpage-hero-heading mb0 hanuman">
+          <span class="ampstart-fullpage-hero-heading-text title"><b>
+            RML vs Traffic Collisions
+          </b>
+          </span>
+        </h1>
+        <h3 class="ampstart-fullpage-hero-heading mb0" style="text-align:center;">
+          <span class="ampstart-fullpage-hero-heading-text description"><b>
+            Effect of recreational marijuana legalization(RML) on traffic-related scenes in California using Difference in Differences model
+          </b>
+          </span>
+        </h3>
+    </header>
+    
+    <footer class="absolute left-0 right-0 bottom-0">
+      <a class="ampstart-readmore py3 caps line-height-2 text-decoration-none center block h5" href="#content"><span class="ampstart-readmore-text px1"><b>Read more</b></span></a>
+    </footer>
+    
+    </figcaption>
+  </figure>
+
+
   <main id="content" role="main" class="">
     <article class="photo-article">
  
 
 
-<h3 id="dui-count-by-day-of-week-and-time" style="text-align:center;">DUI Count by Day of Week and Time</h3>
-<p>On a more granular level, the day of the week and time of collision do contribute to the number of collisions, given that these are significant factors in terms of traffic volume, which are directly related to collisions. Each Friday tends to be the day with the most traffic collisions, while the hours around weekend midnight are the hours with the most DUI accidents, perhaps when people just finished partying and going home, they decide that they might get away with it.</p>
+<h2 id="rml" style="text-align:center;"><b>Recreational Marijuana Legalization (RML)</b></h2>
 
-<iframe src="../assets/datetime_page/ca_heat1.html" style="border:0px #ffffff none;" name="myiFrame" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="500px" width="49%" allowfullscreen=""></iframe>
+<p>Traffic collisions could be one of the most devastating things for families and lives. Each year, more than 10,000 lives are claimed because of driving under influence (DUI). In 2016, California passed the Adult Use of Marijuana Act (AUMA), and legalized recreational use of marijuana (RML). This might be beneficial for tax revenue.</p>
+<p>
+<img padding-bottom: 50px; class="center" src="./assets/revenue.jpg" height="40%" width="70%"/>
+</p>
 
-<iframe src="../assets/datetime_page/sd_heat1.html" style="border:0px #ffffff none;" name="myiFrame" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="500px" width="49%" allowfullscreen=""></iframe>
+<p>But, it might be harmful in traffic related scenes. We suspect that marijuana would bring a negative impact on California traffic collisions' DUI cases. This project focuses on establishing a causal relationship between RML and DUI rate using California and South Dakota’s collision data. In South   Dakota, marijuana is fully illegal. Our hypothesis is that RML would increase the DUI rate in California because of the relaxation of the use of marijuana compared with the state where marijuana is not legalized.</p>
 
+<img class="center" src="./assets/model_page/model2.jpg" height=300px width=600px/>
 <hr />
 <h5 id="share" style="text-align:center;">Share this page</h5>
       <div class="mb4 px3 radhakrishna" align="middle">
@@ -2624,6 +2665,7 @@ body > figure > figcaption > header > h2 {
         <amp-social-share type="gplus" width="45" height="33"></amp-social-share>
         <amp-social-share width="45" height="33" type="email"></amp-social-share>
       </div>
+
 
   
 
