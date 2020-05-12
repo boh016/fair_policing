@@ -33,9 +33,7 @@
                   color: '#808080'
                }]
             };   
-            var tooltip = {
-               valueSuffix: '\xB0C'
-            }
+
             var legend = {
                layout: 'vertical',
                align: 'center',
@@ -53,13 +51,19 @@
                   color:'#fa815f'
                }
             ];
+            var plotOptions = {
+               line: {
+                  marker: {
+                     enabled: false}
+         }
+            };
 
             var json = {};
             json.title = title;
             json.subtitle = subtitle;
             json.xAxis = xAxis;
             json.yAxis = yAxis;
-            json.tooltip = tooltip;
+            json.plotOptions = plotOptions;
             json.legend = legend;
             json.series = series;
             
