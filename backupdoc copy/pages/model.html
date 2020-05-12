@@ -8,9 +8,9 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
   <link rel="shortcut icon" href="https://boh016.github.io/fair_policing/" type="image/png" />
 
-  <title>DUI vs DateTime</title>
+  <title>Model</title>
 
-  <meta name="description" content="How datetime effect DUI rate">
+  <meta name="description" content="Difference in difference model">
 
   <meta property="og:site_name" content="Model" />
   <meta property="og:type" content="website" />
@@ -70,6 +70,19 @@
 
  
   <style amp-custom>
+
+table {
+  width:100%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+
   
   "UTF-8";
 .highlight .hll {
@@ -2625,38 +2638,88 @@ body > figure > figcaption > header > h2 {
 <h1 id="rml" style="text-align:center;"><b>Difference in Difference Model</b></h1>
 <h3 id="rml" style="text-align:center;"><b>Motivation</b></h3>
 
-<p>For California, a big increase in around 2016 can be observed and the counts decrease since 2016. However, for South Dakota, a big decrease in 2016 can be observed and the counts increase since 2016. The reason behind the decrease/increase will be analyzed and whether the change in California was caused by RML or not will be observed.
+<p>The Difference in Differences(DD) model could be one of the most popular techniques to evaluate the effectiveness of certain policies in social sciences and econometrics. It tries to apply experimental design on existing panel data(time spanned data) by assessing the differential effect between the targeted treatment group, for which the studied policy takes place and a comparable control group, for which the policy is not implemented. The advantage of this model is that it would establish causal relationship between the explanatory variable and the response variable. In this case, whether legalizing recreational marijuana would lead to an increase in DUI rate in California or not. By adopting this technique, we would, to a certain degree, mitigate or avoid some selection bias and confounding factors that would bring misconceptions on the true impact that solely based on the policy towards the treatment group. The model uses the equation below to find out the differential effect:
 </p>
+
+<pre>
+    
+  y<sub>it</sub> = α + β * treatment + γ * post + δ * (treatment * post)
+  
+  where y<sub>it</sub> = response variable
+  
+  treatment = indicator of whether the policy takes place or not
+
+  post = time indicator that is 1 if time is after the policy is 
+         effective or 0 if time is before the policy is effective
+
+</pre>
+
+<p>Our benchmark model uses these definitions to investigate our problem and δ, the coefficient of the interaction variable between treatment and time is the key to tell whether the policy brings statistical significance to the treatment group.
+
+Below, the table explains why δ is critical and why the name of this technique is called difference in differences:</p>
+
 <p>
-<img src="../assets/datetime_page/CA_year.png" width="49%" />
-<img src="../assets/datetime_page/SD_year.png" width="49%" />
+<table>
+  <tr><b>
+    <th> </th>
+    <th>Before Policy Implemented (post = 0)</th> 
+    <th>After Policy Implemented (post = 1)</th>
+    <th>Difference</th></b>
+  </tr>
+  <tr>
+    <td>Treatment (treatment =1)</td>
+    <td>α+β</td>
+    <td>α+β+γ+δ</td>
+    <td>γ+δ</td>
+  </tr>
+  <tr>
+    <td>Control (treatment = 0)</td>
+    <td>α</td>
+    <td>α+γ</td>
+    <td>γ</td>
+  </tr>
+  <tr>
+    <td>Difference</td>
+    <td>β</td>
+    <td>β+δ</td>
+    <td>δ</td>
+  </tr>
+</table>
 </p>
 
 
-<h3 id="rml" style="text-align:center;"><b>DUI Rate by Year</b></h3>
-<p>The below graph illustrates the DUI rate of all collisions in each state by year. DUI rate is calculated by the number of collisions caused by DUI over the total number of traffic collisions.
-
-[pic]</p>
+<p>By examining the differential effects on two groups, we could eliminate other factors that potentially influence our treatment group. By testing out whether δ is significant or not, we would be able to establish a causal relationship that is solely based on our interest variable with the response variable.</p>
 
 
-<h3 id="rml" style="text-align:center;"><b>DUI Count by Year and Month</b></h3>
-
-<p>When looking at the specific count of DUI cases by month and year, the year 2016 had more accidents than others, and month does not seem to be a confounder in the analysis since during each year the monthly change does not exceed 33%. There are slight increases in the summertime compared to winter when people are more likely to be under influence. A new initiative in policies may impact on a finer level, thus it is crucial to examine changes by month. RML essentially does not significantly impact the number of people making the decision to drive in such a manner, even when marijuana was not legalized.
-
-South Dakota is not as populated as California, thus there are fewer cases when it comes to counting, but in the summertime, people do tend to have more DUI accidents, probably due to all the outdoor parties in better weather, unlike the year-round slightly milder weather in California. Overall people in both states still tend to have more accidents in summer.
-</p>
-
-<iframe src="../assets/datetime_page/ca_heat2.html" style="border:0px #ffffff none;" name="myiFrame" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="350px" width="49%" allowfullscreen></iframe>
-
-<iframe src="../assets/datetime_page/sd_heat2.html" style="border:0px #ffffff none;" name="myiFrame" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="350px" width="49%" allowfullscreen></iframe>
-
-<h3 id="rml" style="text-align:center;"><b>DUI Count by Day of Week and Time</b></h3>
-<p>On a more granular level, the day of the week and time of collision do contribute to the number of collisions, given that these are significant factors in terms of traffic volume, which are directly related to collisions. Each Friday tends to be the day with the most traffic collisions, while the hours around weekend midnight are the hours with the most DUI accidents, perhaps when people just finished partying and going home, they decide that they might get away with it.</p>
 
 
-<iframe src="../assets/datetime_page/ca_heat1.html" style="border:0px #ffffff none;" name="myiFrame" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="530px" width="49%" allowfullscreen></iframe>
+<h3 id="rml" style="text-align:center;"><b>Preparation EDA for DD model</b></h3>
 
-<iframe src="../assets/datetime_page/sd_heat1.html" style="border:0px #ffffff none;" name="myiFrame" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="530px" width="49%" allowfullscreen></iframe>
+<p>In order to test out the impact of RML on California, we need to find our control group to see the sole influence of marijuana rather than intricate confounding variables. After analyzing lots of other states’ collision data, we find South Dakota's data fit for our framework. South Dakota has not legalized marijuana for any purpose yet and the proportion of DUI caused collision cases to follow a similar pattern in California before the time of California’s RML process. The Difference in Differences model relies on the assumption of a common trend, for which it asks the trend in both treatment and control place before a policy implemented should be roughly the same.</p>
+
+<p><img class="center" src="../assets/model_page/model1.jpg" width=500px height=300px/></p>
+
+<p>First, we plot the annual DUI rates of collisions data for both groups. They both show a downward trend, but the rate is different in a constant value. We further transform the data by subtracting the mean for both groups.</p>
+
+<p><img class="center" src="../assets/model_page/model2.jpg" width=550px height=300px/></p>
+
+<p>After demeaning the data, we see the two groups obtain a roughly similar trend before the time when RML in California(black vertical line). In that case, we would be able to perform Difference in Differences on this set of data.</p>
+
+<p><img class="center" src="../assets/model_page/model3.jpg" width=550px height=300px/></p>
+
+<p>If we continue to explore the data by plotting the monthly DUI rates, we could still see the common trend property hold for these two datasets. The difference in the rates by a constant value still remains a problem. We will perform the same technique for the annual DUI rates by demeaning the two data.</p>
+
+<p><img class="center" src="../assets/model_page/model4.jpg" width=600px height=300px/></p>
+
+<p>After demeaning the data, we find South Dakota’s data is less volatile compared to California’s. This might cause a less robustness of the model but overall the trends are almost the same and this control group could be one of the best data we could find for now.</p>
+
+<p><img class="center" src="../assets/model_page/model5.jpg" width=500px height=300px/></p>
+
+
+<h3 id="rml" style="text-align:center;"><b>Result</b></h3>
+<p>res</p>
+
+
 
 <hr />
 <h5 id="share" style="text-align:center;">Share this page</h5>
@@ -2678,6 +2741,7 @@ South Dakota is not as populated as California, thus there are fewer cases when 
     
   </body>
 </html>
+
 
 
 
