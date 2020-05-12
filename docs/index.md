@@ -16,4 +16,8 @@ Explore More:
 
 [DUI vs. DateTime](./pages/datetime.html)
 
+[Confounder and Possible Effects](./pages/cofounder.html)
+
 [Model](./pages/model.html)
+
+[Source](./pages/source.html)
