@@ -6,9 +6,8 @@ import re
 import pandas as pd
 
 sys.path.insert(0, 'src')
-import fetch
-import clean
 import eda
+import model
 
 STOP_PARAMS = 'config/stop-params.json'
 
@@ -67,6 +66,15 @@ def test_eda(fp,out):
     eda.plot_monthly_trend(ca,sd,out)
     return
 
+def test_pipeline(fp,out):
+    test_eda(fp,out)
+    ca = pd.read_csv(fp+"/CA_test.csv")
+    sd = pd.read_csv(fp+"/SD_test.csv")
+    data = model.make_model_data(ca,sd)
+    result = model.DD_model(data)
+    model.result_to_txt(result,out)
+    return
+
 def main(targets):
 
     # make the clean target
@@ -103,27 +111,22 @@ def main(targets):
         test_eda(**cfg)
 
 
-#    if 'test-project' in targets:
-#        if os.path.isdir("./data"):
-#            shutil.rmtree('./data/temp',ignore_errors=True)
-#            shutil.rmtree('./data/out',ignore_errors=True)
-#            shutil.rmtree('./data/test',ignore_errors=True)
-#
-#            os.mkdir("./data/temp")
-#            os.mkdir('./data/out')
-#            os.mkdir('./data/test')
-#        else:
-#            os.mkdir("./data")
-#            os.mkdir("./data/temp")
-#            os.mkdir('./data/out')
-#            os.mkdir('./data/test')
-#        data_cfg = load_params(TEST_PARAMS)
-#        get_data(**data_cfg)
-#        clean_cfg = load_params(PROCESS_PARAMS)
-#        process_data(**clean_cfg)
-#        analysis_cfg = load_params(ANALYSIS_PARAMS)
-#        output_analysis(**analysis_cfg)
+    if 'test-project' in targets:
+        if os.path.isdir("./data"):
+            shutil.rmtree('./data/temp',ignore_errors=True)
+            shutil.rmtree('./data/out',ignore_errors=True)
 
+            os.mkdir("./data/temp")
+            os.mkdir('./data/out')
+        else:
+            os.mkdir("./data")
+            os.mkdir("./data/temp")
+            os.mkdir('./data/out')
+            os.mkdir('./data/test')
+            print("no data in test folder")
+            
+        cfg = load_params(TEST_COLLISION_PARAMS)
+        test_pipeline(**cfg)
     return
 
 

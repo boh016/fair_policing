@@ -1,3 +1,5 @@
+##############################Deprecated (changed data source)#######################
+####### No fetch functions needed anymore #### All comes from querying database############
 import numpy as np
 import pandas as pd
 
