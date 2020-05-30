@@ -348,6 +348,49 @@
 
 main {
   display: block; }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: sticky;
+  background-color: #ff6f00;
+  height:50px;
+
+}
+
+li {
+  overflow: hidden;
+  background-color: #ff6f00;
+  color:#fff;
+ float:left;
+
+}
+
+li a {
+
+  float: left;
+  color: #fff;
+  background-color: #ff6f00;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #942c80 !important;
+  color: #fff !important;
+}
+li a.active {
+  background-color: #942c80;
+  color: white;
+}
+li a:not(.active):visited {
+  background-color: #ff6f00;
+  color: white;
+}
 
 body {
   background-color: #fff;
@@ -361,6 +404,7 @@ body {
   -webkit-font-feature-settings: "liga", "dlig";
   -o-font-feature-settings: "liga", "dlig";
   font-feature-settings: "liga", "dlig"; }
+
 
 .site-header {
   position: relative;
@@ -2550,36 +2594,45 @@ body > figure > figcaption > header > h2 {
 
   <body>
     <!-- Start Navbar -->
-  <header class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr4 ">
-    <div role="button" aria-label="open sidebar" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger  pr2  ">☰
-    </div>
-    
-  </header>
+
 
 
 <!-- Start Sidebar -->
-<amp-sidebar id="header-sidebar" class="ampstart-sidebar px3" layout="nodisplay">
-  <div class="flex justify-start items-center ampstart-sidebar-header">
-    <div role="button" aria-label="close sidebar" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger items-start">✕</div>
-  </div>
-  <nav class="ampstart-sidebar-nav ampstart-nav">
-    <ul class="list-reset m0 p0 ampstart-label">
+
+<ul>
+
+
+          <li ><a href="index.html" class="active">Home</a></li>
+
+
+          <li><a href="./pages/model.html" class="text-decoration-none">Model</a></li>
+    
+
+    
+          <li><a href="./pages/datetime.html" class="text-decoration-none">DUI VS TIME</a></li>
+   
+          <li><a href="./pages/confounder.html" class="text-decoration-none">Confounder</a>
+      </li>
+            
+          <li><a href="./pages/sources.html" class="text-decoration-none">Sources</a></li>
+
+
+    
+          <li><a href="./pages/about.html" class="text-decoration-none">About</a></li>
         
-    </ul>
-  </nav>
 
 
-  <ul class="ampstart-social-follow list-reset flex justify-around items-center flex-wrap m0 mb4">
-    
-    
-    
-  </ul>
 
-  <ul class="ampstart-sidebar-faq list-reset m0">
-  
-  
-  </ul>
-</amp-sidebar>
+               <div class="ampstart-social-box mb4" style="float:right">
+  <amp-social-share type="twitter" aria-label="Share this on Twitter"></amp-social-share>
+  <amp-social-share type="facebook" aria-label="Share this on Facebook" data-param-app_id="145393166088568"></amp-social-share>
+  <amp-social-share type="gplus" aria-label="Share this on Google Plus"></amp-social-share>
+  <amp-social-share type="email" aria-label="Share this with E-mail"></amp-social-share>
+</div>
+
+</ul>
+    
+
 
 
     <h2 id="recreational-marijuana-legalization-rml">Recreational Marijuana Legalization (RML)</h2>
