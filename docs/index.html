@@ -415,7 +415,22 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
   display: block;}
 
+* {
+  box-sizing: border-box;
+}
 
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 body {
   background-color: #fff;
   font-family: "Helvetica Neue", "Open Sans", Arial, Helvetica, sans-serif;

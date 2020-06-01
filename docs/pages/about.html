@@ -349,6 +349,22 @@
 
 main {
   display: block; }
+  * {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 
 body {
   background-color: #fff;
@@ -2624,21 +2640,33 @@ body > figure > figcaption > header > h2 {
 
 <h2 id="rml" style="text-align:center;"><b>About</b></h2>
 <h3 id="rml" style="text-align:center;"><b>Authors</b></h3>
-<h4>Bo Hu</h4>
-<p>
-<img padding-bottom: 50px; class="left-align" src="../assets/profile/Kevin.png" height="90px" width="70px"/>
-</p>
-<p>Very smart guy</p>
-<h4>Jialin Shan</h4>
-<p>
-<img padding-bottom: 50px; class="left-align" src="../assets/profile/Bob.jpg" height="60px" width="60px"/>
-</p>
-<p>Very cute gal</p>
-<h4>Yingwen Zhang</h4>
-<p>
-<img padding-bottom: 50px; class="left-align" src="../assets/profile/Stuart.png" height="70px" width="70px"/>
-</p>
-<p>Very pretty gal</p>
+
+<div class="row">
+  <div class="column" style="text-align:center;">
+    Bo Hu
+    <img src="../assets/profile/Kevin.png" alt="Snow" style="width:100%">
+  </div>
+  <div class="column" style="text-align:center;">Jialin Shan
+    <img src="../assets/profile/Bob.jpg" alt="Forest" style="width:100%">
+  </div>
+  <div class="column" style="text-align:center;"> Yingwen Zhang
+    <img src="../assets/profile/Stuart.png" alt="Mountains" style="width:100%">
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="column" style="text-align:center;">
+    Data Science/Statistics
+  </div>
+  <div class="column" style="text-align:center;">
+   Data Science/Classical Studies
+  </div>
+  <div class="column" style="text-align:center;">
+    Data Science/Psychology
+  </div>
+</div>
+
 
 
 <p style="text-align:center;"><a href="../index.html">home</a></p>
