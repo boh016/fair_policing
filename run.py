@@ -67,11 +67,29 @@ def test_eda(fp,out):
     eda.plot_monthly_trend(ca,sd,out)
     return
 
+# pipeline up untill checkpoint3
 def test_pipeline(fp,out):
     test_eda(fp,out)
     ca = pd.read_csv(fp+"/CA_test.csv")
     sd = pd.read_csv(fp+"/SD_test.csv")
     data = model.make_model_data(ca,sd)
+    result = model.DD_model(data)
+    model.result_to_txt(result,out)
+    return
+
+# final pipeline: filter the data and then perform full pipeline
+def pipeline(fp,out):
+    test_eda(fp,out)
+    ca = pd.read_csv(fp+"/CA_test.csv")
+    sd = pd.read_csv(fp+"/SD_test.csv")
+    data = model.make_model_data(ca,sd)
+
+    filtered_ca = data[data.STATE == "CA"]
+    filtered_sd = data[data.STATE == "SD"]
+    filtered_ca.DUI_RATE = model.detrend(filtered_ca.DUI_RATE,0.13)
+    filtered_sd.DUI_RATE = model.detrend(filtered_sd.DUI_RATE,0.13)
+
+    filtered_data = pd.concat([filtered_ca,filtered_sd])
     result = model.DD_model(data)
     model.result_to_txt(result,out)
     return
@@ -144,7 +162,7 @@ def main(targets):
             print("no data in test folder")
 
         cfg = load_params(PROJECT_PARAMS)
-        test_pipeline(**cfg)
+        pipeline(**cfg)
     return
 
 

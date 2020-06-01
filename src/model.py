@@ -1,6 +1,17 @@
 import numpy as np
 import pandas as pd
 import statsmodels.api as sm
+
+##################### Functions for Detrend##########################
+# input is ca_DUI_by_month.DUI_RATE OR sd_DUI_by_month.DUI_RATE
+# perform simple Discrete Fourier Transform and filter in frequency domain
+# output the filtered DUI_RATE
+def detrend(y,threshold):
+    signal_fft = np.fft.fft(y)
+    signal_fft[np.abs(signal_fft) > threshold] = 0
+    filtered = np.fft.ifft(signal_fft)
+    return filtered
+
 ##################### Functions for DD model##########################
 # input two states data after calling functions in eda.py
 # this function will create df for model use
