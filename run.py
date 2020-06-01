@@ -17,6 +17,7 @@ TEST_STOP_PARAMS = 'config/test-stop-params.json'
 
 TEST_COLLISION_PARAMS = 'config/collision-params.json'
 
+PROJECT_PARAMS = 'config/project-params.json'
 
 def load_params(fp):
     with open(fp) as fh:
@@ -124,8 +125,25 @@ def main(targets):
             os.mkdir('./data/out')
             os.mkdir('./data/test')
             print("no data in test folder")
-            
+
         cfg = load_params(TEST_COLLISION_PARAMS)
+        test_pipeline(**cfg)
+
+    if 'project' in targets:
+        if os.path.isdir("./data"):
+            shutil.rmtree('./data/temp',ignore_errors=True)
+            shutil.rmtree('./data/out',ignore_errors=True)
+
+            os.mkdir("./data/temp")
+            os.mkdir('./data/out')
+        else:
+            os.mkdir("./data")
+            os.mkdir("./data/temp")
+            os.mkdir('./data/out')
+            os.mkdir('./data/test')
+            print("no data in test folder")
+
+        cfg = load_params(PROJECT_PARAMS)
         test_pipeline(**cfg)
     return
 
