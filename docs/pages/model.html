@@ -2636,10 +2636,9 @@ body > figure > figcaption > header > h2 {
 
 
 <h2 id="rml" style="text-align:center;"><b>Difference in Difference Model</b></h2>
-<h3 id="rml" style="text-align:center;"><b>Motivation</b></h3>
+<h3 id="rml" style="text-align:center;"><b>Introduction</b></h3>
 
-<p>The Difference in Differences(DD) model could be one of the most popular techniques to evaluate the effectiveness of certain policies in social sciences and econometrics. It tries to apply experimental design on existing panel data(time spanned data) by assessing the differential effect between the targeted treatment group, for which the studied policy takes place and a comparable control group, for which the policy is not implemented. The advantage of this model is that it would establish causal relationship between the explanatory variable and the response variable. In this case, whether legalizing recreational marijuana would lead to an increase in DUI rate in California or not. By adopting this technique, we would, to a certain degree, mitigate or avoid some selection bias and confounding factors that would bring misconceptions on the true impact that solely based on the policy towards the treatment group. The model uses the equation below to find out the differential effect:
-</p>
+<p>Difference in Differences technique tries to apply experimental design on existing panel data(time spanned data) by assessing the differential effect between the targeted treatment group and the control group. It involves two indicator variables. The treatment variable signifies, in this case, whether the state legalized marijuana or not and the named post variable signifies the time whether legalization of marijuana is passed in legislation or not.</p>
 
 <pre>
 
@@ -2654,26 +2653,24 @@ body > figure > figcaption > header > h2 {
 
 </pre>
 
-<p>Our benchmark model uses these definitions to investigate our problem and δ, the coefficient of the interaction variable between treatment and time is the key to tell whether the policy brings statistical significance to the treatment group.
+<p>By looking at the table below, the coefficient δ of the product of these two variables which is called the coefficient of the interaction variable actually gives the pure differential effect. Therefore, δ is the key to tell whether post-RML period in California creates higher percentage of DUI cases or not. </p>
 
-Below, the table explains why δ is critical and why the name of this technique is called difference in differences:</p>
 
-<p>
 <table>
   <tr><b>
     <th> </th>
-    <th>Before Policy Implemented (post = 0)</th>
-    <th>After Policy Implemented (post = 1)</th>
+    <th>Before RML (post = 0)</th>
+    <th>After RML (post = 1)</th>
     <th>Difference</th></b>
   </tr>
   <tr>
-    <td>Treatment (treatment =1)</td>
+    <td>California (treatment =1)</td>
     <td>α+β</td>
     <td>α+β+γ+δ</td>
     <td>γ+δ</td>
   </tr>
   <tr>
-    <td>Control (treatment = 0)</td>
+    <td>South Dakota (treatment = 0)</td>
     <td>α</td>
     <td>α+γ</td>
     <td>γ</td>
@@ -2685,40 +2682,24 @@ Below, the table explains why δ is critical and why the name of this technique 
     <td>δ</td>
   </tr>
 </table>
-</p>
 
+<p>We will apply linear regression to the equation on the top to find out the value of δ. If δ is reletively large, then we would consider the increase in percentage of DUI cases after legalizing marijuana is due to Recreational Marijuana Legalization according to Difference in Differences technique.</p>
 
-<p>By examining the differential effects on two groups, we could eliminate other factors that potentially influence our treatment group. By testing out whether δ is significant or not, we would be able to establish a causal relationship that is solely based on our interest variable with the response variable.</p>
+<h3 id="rml" style="text-align:center;"><b>Common Trend Assumption</b></h3>
 
-
-
-
-<h3 id="rml" style="text-align:center;"><b>Preparation EDA for DD model</b></h3>
-
-<p>In order to test out the impact of RML on California, we need to find our control group to see the sole influence of marijuana rather than intricate confounding variables. After analyzing lots of other states’ collision data, we find South Dakota's data fit for our framework. South Dakota has not legalized marijuana for any purpose yet and the proportion of DUI caused collision cases to follow a similar pattern in California before the time of California’s RML process. The Difference in Differences model relies on the assumption of a common trend, for which it asks the trend in both treatment and control place before a policy implemented should be roughly the same.</p>
-
-<p><iframe class="highcharts-iframe" src="https://app.everviz.com/embed/Ua1b0dCj7/" title="Chart: Copy of DUI Rate by Year" style="border: 0; width: 100%; height: 430px"></iframe></p>
-
-<p>First, we plot the annual DUI rates of collisions data for both groups. They both show a downward trend, but the rate is different in a constant value. We further transform the data by subtracting the mean for both groups.</p>
-
-<p><iframe class="highcharts-iframe" src="https://app.everviz.com/embed/PKUt4q5Oy/" title="Chart: DUI Rate by Year (Demeaned)" style="border: 0; width: 100%; height: 430px"></iframe></p>
-
-<p>After demeaning the data, we see the two groups obtain a roughly similar trend before the time when RML in California(black vertical line). In that case, we would be able to perform Difference in Differences on this set of data.</p>
+<p>Another thing to notice is that Difference in Differences technique relies on the assumption of common trends of the two states before the policy is implemented. Difference in Differences model would produce a robust result on the effectiveness of the policy’s if the patterns are similar.</p>
 
 <p><iframe class="highcharts-iframe" src="https://app.everviz.com/embed/_bjo6Eqp7/" title="Chart: Monthly DUI Rate" style="border: 0; width: 100%; height: 430px"></iframe></p>
 
-<p>If we continue to explore the data by plotting the monthly DUI rates, we could still see the common trend property hold for these two datasets. The difference in the rates by a constant value still remains a problem. We will perform the same technique for the annual DUI rates by demeaning the two data.</p>
-
 <p><iframe class="highcharts-iframe" src="https://app.everviz.com/embed/vVluMJTSQ/" title="Chart: Monthly DUI Rate (Demeaned)" style="border: 0; width: 100%; height: 430px"></iframe></p>
 
-<p>After demeaning the data, we find South Dakota’s data is less volatile compared to California’s. This might cause a less robustness of the model but overall the trends are almost the same and this control group could be one of the best data we could find for now.</p>
-
-<p><iframe class="highcharts-iframe" src="https://app.everviz.com/embed/FJQ43G2-X/" title="Chart: Monthly Drug Rate" style="border: 0; width: 100%; height: 430px"></iframe></p>
+<p>In reality, our data does not show an extremely strong alignment with the common trend assumption. Indeed, there could be lots of different characteristics for both states. This could be one of the limitations for our findings since states actually differ so there won't be a perfect control group in this situation. We tried to transform both states' data so that they would eliminate the side effect as much as possible.</p>
 
 
-<h3 id="rml" style="text-align:center;"><b>Result</b></h3>
-<p>res</p>
+<h3 id="rml" style="text-align:center;"><b>Detrend</b></h3>
+<p>We find out there is a strong seasonality pattern in South Dakota, while California does not necessarily have. Therefore, we tried to detrend Both data so that these two groups would become more comparable.</p>
 
+<img src="../assets/model_page/detrend.png" alt="Detrend">
 
 <p style="text-align:center;"><a href="../index.html">home</a></p>
 <hr />
