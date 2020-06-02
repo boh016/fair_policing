@@ -8,35 +8,35 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
   <link rel="shortcut icon" href="https://boh016.github.io/fair_policing/" type="image/png" />
 
-  <title>RML vs Traffic Collisions</title>
+  <title>California Analysis</title>
 
-  <meta name="description" content="How recreational marijuana legalization(RML) affects traffic-related scenes in California using Difference in Differences model">
+  <meta name="description" content="California Analysis">
 
-  <meta property="og:site_name" content="RML vs Traffic Collisions" />
+  <meta property="og:site_name" content="California Analysis" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="RML vs Traffic Collisions" />
-  <meta property="og:description" content="How recreational marijuana legalization(RML) affects traffic-related scenes in California using Difference in Differences model" />
-  <meta property="og:url" content="https://boh016.github.io/fair_policing/" />
-  <meta property="og:image" content="http://localhost:4000/assets/images/radhakrishna.jpg" />
+  <meta property="og:title" content="California Analysis" />
+  <meta property="og:description" content="California Analysis" />
+  <meta property="og:url" content="https://boh016.github.io/fair_policing/pages/ca.html" />
+  <meta property="og:image" content="http://localhost:4000assets/images/radhakrishna.jpg" />
   <meta property="article:publisher" content="https://www.facebook.com/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="RML vs Traffic Collisions" />
-  <meta name="twitter:description" content="How recreational marijuana legalization(RML) affects traffic-related scenes in California using Difference in Differences model" />
-  <meta name="twitter:url" content="https://boh016.github.io/fair_policing/" />
+  <meta name="twitter:title" content="California Analysis" />
+  <meta name="twitter:description" content="California Analysis" />
+  <meta name="twitter:url" content="https://boh016.github.io/fair_policing/pages/ca.html" />
   <meta name="twitter:image" content="http://localhost:4000assets/images/radhakrishna.jpg" />
   <meta name="twitter:label1" content="Written by" />
-  <meta name="twitter:data1" content="RML vs Traffic Collisions" />
+  <meta name="twitter:data1" content="California Analysis" />
   <meta name="twitter:site" content="@" />
   <meta name="twitter:creator" content="@" />
   <meta property="og:image:width" content="2000" />
   <meta property="og:image:height" content="666" />
 
-  <link rel="canonical" href="https://boh016.github.io/fair_policing/" />
-  <link rel="alternate" type="application/rss+xml" title="RML vs Traffic Collisions" href="https://boh016.github.io/fair_policing/feed.xml">
+  <link rel="canonical" href="https://boh016.github.io/fair_policing/pages/ca.html" />
+  <link rel="alternate" type="application/rss+xml" title="Model" href="https://boh016.github.io/fair_policing/pages/ca.html">
 
   <script type="application/ld+json">
 
-{
+
   "@context": "http://schema.org",
   "@type": "NewsArticle",
   "mainEntityOfPage": "https://boh016.github.io/fair_policing/",
@@ -70,6 +70,19 @@
 
 
   <style amp-custom>
+
+table {
+  width:100%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+
 
   "UTF-8";
 .highlight .hll {
@@ -349,72 +362,6 @@
 
 main {
   display: block; }
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #ff6f00;
-  height:52px;
-  width:100%;
-}
-
-li {
-  float: left;
-  overflow:hidden;
-  background-color: #ff6f00;
-  color:#fff;
-}
-
-li a, .dropbtn {
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size:17px;
-  background-color: #ff6f00;
-}
-
-li a:hover, .dropdown:hover .dropbtn {
-  background-color: #942c80 !important;
-  color: #fff !important;
-}
-li a.active {
-  background-color: #942c80;
-  color: white;
-}
-li a:not(.active):visited {
-  background-color: #ff6f00;
-  color: white;
-}
-
-
-li.dropdown {
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #ff6f00;
-  min-width: 122px;  
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {background-color: #942c80;}
-
-.dropdown:hover .dropdown-content {
-  display: block;}
-
 
 body {
   background-color: #fff;
@@ -2626,78 +2573,61 @@ body > figure > figcaption > header > h2 {
 
   <body>
     <!-- Start Navbar -->
- 
+  <header class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr4 ">
+    <div role="button" aria-label="open sidebar" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger  pr2  ">☰
+    </div>
+
+    <a class="my0 mx-auto" href="/hanuman/"><amp-img src="/hanuman/assets/images/logo.png" width="110" height="33" layout="fixed" class="my0 mx-auto" alt="Logo"></amp-img></a>
+
+  </header>
 
 
 <!-- Start Sidebar -->
-
-    <ul>
-
-
-
-          <li><a href="index.html" class="active">Home</a></li>
-
-          <li><a href="./pages/ca.html" class="text-decoration-none">CA Analysis</a></li>
-
-          <li class="dropdown"><a href="javascript:void(0)" class="dropbtn">CA vs SD</a>
-             
-              <div class="dropdown-content">
-        <a href="./pages/datetime.html">DUI vs Time</a>
-        <a href="./pages/confounder.html">Lighting Condition</a>
-        <a href="./pages/confounder.html">Injury Type</a>
-        <a href="./pages/confounder.html">Collision Type</a>
-      </div></li>
-          <li><a href="./pages/model.html" class="text-decoration-none">DD Model</a></li>
-
-          <li><a href="./pages/result.html" class="text-decoration-none">Result and Discussion</a></li>
-  
-          <li><a href="./pages/sources.html" class="text-decoration-none">Sources</a></li>
-  
-          <li><a href="./pages/about.html" class="text-decoration-none">About</a></li>
+<amp-sidebar id="header-sidebar" class="ampstart-sidebar px3" layout="nodisplay">
+  <div class="flex justify-start items-center ampstart-sidebar-header">
+    <div role="button" aria-label="close sidebar" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger items-start">✕</div>
+  </div>
+  <nav class="ampstart-sidebar-nav ampstart-nav">
+    <ul class="list-reset m0 p0 ampstart-label">
 
 
-          <div class="ampstart-social-box mb4" style="float:right">
+      <li class="ampstart-nav-item ampstart-nav-dropdown relative ">
+          <li class="ampstart-faq-item"><a href="../index.html" class="text-decoration-none">Home</a></li>
+      </li>
+      <li class="ampstart-nav-item ampstart-nav-dropdown relative ">
+          <li class="ampstart-faq-item"><a href="model.html" class="text-decoration-none">Model</a></li>
+      </li>
+
+      <li class="ampstart-nav-item ampstart-nav-dropdown relative ">
+          <li class="ampstart-faq-item"><a href="datetime.html" class="text-decoration-none">DUI VS TIME</a></li>
+      </li>
+      <li class="ampstart-nav-item ampstart-nav-dropdown relative ">
+          <li class="ampstart-faq-item"><a href="confounder.html" class="text-decoration-none">Confounder</a></li>
+      </li>
+            <li class="ampstart-nav-item ampstart-nav-dropdown relative ">
+          <li class="ampstart-faq-item"><a href="sources.html" class="text-decoration-none">Sources</a></li>
+      </li>
+
+      <li class="ampstart-nav-item ampstart-nav-dropdown relative ">
+          <li class="ampstart-faq-item"><a href="about.html" class="text-decoration-none">About</a></li>
+          <div class="ampstart-social-box mb4">
   <amp-social-share type="twitter" aria-label="Share this on Twitter"></amp-social-share>
   <amp-social-share type="facebook" aria-label="Share this on Facebook" data-param-app_id="145393166088568"></amp-social-share>
   <amp-social-share type="gplus" aria-label="Share this on Google Plus"></amp-social-share>
   <amp-social-share type="email" aria-label="Share this with E-mail"></amp-social-share>
 </div>
-
+      </li>
 
     </ul>
+  </nav>
 
 
 
 
 
-      <figure class="ampstart-image-fullpage-hero m0 relative mb4">
-    <amp-img width="404" height="720" alt="Cover" layout="responsive" src="./assets/weed.png" media="(max-width: 415px)"></amp-img>
-    <amp-img height="720" alt="Cover" layout="fixed-height" src="./assets/weed.png" media="(min-width: 416px)"></amp-img>
-    <figcaption class="absolute top-0 right-0 bottom-0 left-0">
-      <header class="p1">
-        <h1 class="ampstart-fullpage-hero-heading mb0 hanuman">
-          <span class="ampstart-fullpage-hero-heading-text title"><b>
-           RML vs Traffic Collisions
-          </b>
-          </span>
+</amp-sidebar>
 
-        </h1>
-       
 
-        <h3 class="ampstart-fullpage-hero-heading mb0" style="text-align:center;">
-          <span class="ampstart-fullpage-hero-heading-text description"><b>
-            Effect of recreational marijuana legalization(RML) on traffic-related scenes in California using Difference in Differences model
-          </b>
-          </span>
-        </h3>
-    </header>
-
-    <footer class="absolute left-0 right-0 bottom-0">
-      <a class="ampstart-readmore py3 caps line-height-2 text-decoration-none center block h5" href="#content"><span class="ampstart-readmore-text px1"><b>Read more</b></span></a>
-    </footer>
-
-    </figcaption>
-  </figure>
 
 
   <main id="content" role="main" class="">
@@ -2705,28 +2635,16 @@ body > figure > figcaption > header > h2 {
 
 
 
-<h2 id="rml" style="text-align:center;"><b>Recreational Marijuana Legalization (RML)</b></h2>
+<h2 id="rml" style="text-align:center;"><b>California Analysis</b></h2>
 
-<p>Traffic collisions could be one of the most devastating things for families and lives. Each year, more than 10,000 lives are claimed because of driving under influence (DUI). In 2016, California passed the Adult Use of Marijuana Act (AUMA), and legalized recreational use of marijuana (RML). This might be beneficial for tax revenue.</p>
-<p>
-<img padding-bottom: 50px; class="center" src="./assets/revenue.jpg" height="40%" width="70%"/>
-</p>
 
-<p>But, it might be harmful in traffic related scenes. We suspect that marijuana would bring a negative impact on California traffic collisions' DUI cases. This project focuses on establishing a causal relationship between RML and DUI rate using California and South Dakota’s collision data. In South   Dakota, marijuana is fully illegal. Our hypothesis is that RML would increase the DUI rate in California because of the relaxation of the use of marijuana compared with the state where marijuana is not legalized.</p>
 
-<p><iframe class="highcharts-iframe" src="https://app.everviz.com/embed/PKUt4q5Oy/" title="Chart: DUI Rate by Year (Demeaned)" style="border: 0; width: 100%; height: 430px"></iframe></p>
-<p>Explore More: </p>
-<p><a href="./pages/model.html">Model</a></p>
-<p><a href="./pages/datetime.html">DUI vs. Time</a></p>
-<p><a href="./pages/confounder.html">Confounder and Possible Effects</a></p>
-<p><a href="./pages/sources.html">Source</a></p>
-<p><a href="./pages/about.html">About Us</a></p>
+<p style="text-align:center;"><a href="../index.html">home</a></p>
 <hr />
 <h5 id="share" style="text-align:center;">Share this page</h5>
       <div class="mb4 px3 radhakrishna" align="middle">
         <amp-social-share type="facebook" width="45" height="33" data-param-app_id="145393166088568"></amp-social-share>
         <amp-social-share type="twitter" width="45" height="33"></amp-social-share>
-        <amp-social-share type="gplus" width="45" height="33"></amp-social-share>
         <amp-social-share width="45" height="33" type="email"></amp-social-share>
       </div>
 
@@ -2738,7 +2656,6 @@ body > figure > figcaption > header > h2 {
 
 
 </main>
-
 
   </body>
 </html>
