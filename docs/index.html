@@ -349,6 +349,17 @@
 
 main {
   display: block; }
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
 ul {
   list-style-type: none;
   margin: 0;
@@ -2715,9 +2726,13 @@ body > figure > figcaption > header > h2 {
 
 <p><iframe class="highcharts-iframe" src="https://app.everviz.com/embed/PKUt4q5Oy/" title="Chart: DUI Rate by Year (Demeaned)" style="border: 0; width: 100%; height: 430px"></iframe></p>
 <p>Explore More: </p>
-<p><a href="./pages/model.html">Model</a></p>
-<p><a href="./pages/datetime.html">DUI vs. Time</a></p>
-<p><a href="./pages/confounder.html">Confounder and Possible Effects</a></p>
+<p><a href="./pages/ca.html">Califronia Analysis</a>: Introduction of California dataset & EDA & linear regression</p>
+<p>CA vs SD <i class="arrow down"></i>  : Comparison between California and South Dakota data</p>
+<p><a href="./pages/datetime.html">Ordinal Features</a>: DUI vs. Time</p>
+<p><a href="./pages/confounder.html">Nominal Features</a>: DUI vs. Environmental factors</p>
+<p><a href="./pages/model.html">DD Model</a>: Introduction of Difference in Differences Model
+</p>
+<p><a href="./pages/model.html">Result and Discussion</a>: DD result analysis</p>
 <p><a href="./pages/sources.html">Source</a></p>
 <p><a href="./pages/about.html">About Us</a></p>
 <hr />
