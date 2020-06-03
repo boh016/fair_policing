@@ -363,39 +363,71 @@ th, td {
 main {
   display: block; }
 
-    <ul>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ff6f00;
+  height:52px;
+  width:100%;
+}
+
+li {
+  float: left;
+  overflow:hidden;
+  background-color: #ff6f00;
+  color:#fff;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size:17px;
+  background-color: #ff6f00;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: #942c80 !important;
+  color: #fff !important;
+}
+li a.active {
+  background-color: #942c80;
+  color: white;
+}
+li a:not(.active):visited {
+  background-color: #ff6f00;
+  color: white;
+}
 
 
+li.dropdown {
+  display: inline-block;
+}
 
-          <li><a href="../index.html" class="text-decoration-none">Home</a></li>
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ff6f00;
+  min-width: 122px;  
+  z-index: 1;
+}
 
-          <li><a href="ca.html" class="active">CA Analysis</a></li>
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
 
-          <li class="dropdown"><a href="javascript:void(0)" class="dropbtn">CA vs SD</a>
-             
-              <div class="dropdown-content">
-        <a href="datetime.html">Ordinal Features</a>
-        <a href="confounder.html">Nominal Features</a>
-       
-      </div></li>
-          <li><a href="model.html" class="text-decoration-none">DD Model</a></li>
+.dropdown-content a:hover {background-color: #942c80;}
 
-          <li><a href="result.html" class="text-decoration-none">Result and Discussion</a></li>
-  
-          <li><a href="sources.html" class="text-decoration-none">Sources</a></li>
-  
-          <li><a href="about.html" class="text-decoration-none">About</a></li>
-
-
-          <div class="ampstart-social-box mb4" style="float:right">
-  <amp-social-share type="twitter" aria-label="Share this on Twitter"></amp-social-share>
-  <amp-social-share type="facebook" aria-label="Share this on Facebook" data-param-app_id="145393166088568"></amp-social-share>
-  <amp-social-share type="gplus" aria-label="Share this on Google Plus"></amp-social-share>
-  <amp-social-share type="email" aria-label="Share this with E-mail"></amp-social-share>
-</div>
-
-
-    </ul>
+.dropdown:hover .dropdown-content {
+  display: block;} 
 
 
 body {
